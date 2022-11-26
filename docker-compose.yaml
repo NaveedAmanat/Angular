@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  web:
+    image: angular
+    ports:
+      -  80:80
+    networks:
+      - webnet-spring
+    depends_on:
+      - spring
+    
+
+  spring:
+    image: spring:latest
+    container_name: spring
+    ports:
+      -  8080:8080
+    networks:
+      -  webnet-spring
+
+networks:
+  webnet-spring:
