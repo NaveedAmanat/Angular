@@ -10,5 +10,10 @@ pipeline {
         } 
       }
     }
+    stage('Trigger Manifest'){
+      steps{
+        build job: 'AngularPipelineArtifact', parameters: [string(name: 'IMAGE_TAG', value: env.BUILD_NUMBER)]
+      }
+    }
   }
 }
