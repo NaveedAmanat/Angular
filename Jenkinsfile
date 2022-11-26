@@ -6,7 +6,7 @@ pipeline {
     stage('build image') {
       steps {
         script{
-          sh 'sudo docker build -t naveed0004/Angular:${BUILD_NUMBER} .'
+          sh 'sudo docker build -t naveed0004/Angular:${BUILD_NUMBER} /angular-client'
         } 
       }
     }
